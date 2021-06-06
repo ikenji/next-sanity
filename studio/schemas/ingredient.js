@@ -12,12 +12,12 @@ export default {
       name: "image",
       title: "Image",
       type: "image",
-      options: {
+      option: {
         hotspot: true,
       },
     },
     {
-      name: "note",
+      name: "notes",
       title: "Notes",
       type: "text",
     },
