@@ -26,6 +26,11 @@ const recipeQuery = `*[_type == "recipe" && slug.current == $slug][0]{
 
 export default function OneRecipe({ data, preview }) {
   if (!data) return <div>Loading...</div>;
+  const { data: recipe } = usePreviewSubscription(recipeQuery, {
+    params: { slug: data.recipe?.slug.current },
+    initialData: data,
+    enabled: preview,
+  });
 
   const [likes, setLikes] = useState(data?.recipe?.likes);
 
@@ -39,9 +44,6 @@ export default function OneRecipe({ data, preview }) {
 
     setLikes(data.likes);
   };
-
-  const { recipe }  = data;
-
   return (
     <article className="recipe">
       <h1>{recipe.name}</h1>
