@@ -1,8 +1,16 @@
+App
+https://next-sanity-liart.vercel.app
+
 Sanity
 https://next-sanity-example.sanity.studio/
 
-App
-https://next-sanity-liart.vercel.app/recipes/mango-smoothie
+
+Sync production with staging.
+```
+sanity dataset export production && sanity dataset import production.tar.gz staging --replace && rm production.tar.gz
+```
+
+----
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
